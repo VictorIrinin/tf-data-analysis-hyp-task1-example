@@ -11,4 +11,16 @@ def solution(x_success: int,
     # Измените код этой функции
     # Это будет вашим решением
     # Не меняйте название функции и её аргументы
-    return ... # Ваш ответ, True или False
+    res = False
+    x_k = x_success / x_cnt
+    y_k = y_success / y_cnt    
+    if x_k > y_k:
+        res = True
+    elif x_k < y_cnt:
+        res = False
+    else:
+        if x_cnt <= y_cnt:
+            res = True
+        else:
+            res = False
+    return res # Ваш ответ, True или False
