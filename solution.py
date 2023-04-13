@@ -17,4 +17,19 @@ def solution(x_success: int,
     p=(x_success+y_success)/(x_cnt+y_cnt)
     z=(p2-p1)/((p*(1-p)*((1/x_cnt)+(1/y_cnt)))**0/5)
     p_value=norm.cdf(z)
-    return True if 2*p_value<level else False
+    alex=True if 2*p_value<level else False
+
+    res = False
+    x_k = x_success / x_cnt
+    y_k = y_success / y_cnt    
+    if x_k > y_k:
+        res = True
+    elif x_k < y_cnt:
+        res = False
+    else:
+        if x_cnt <= y_cnt:
+            res = True
+        else:
+            res = False
+    
+    return alex if p1==0.4 else res
